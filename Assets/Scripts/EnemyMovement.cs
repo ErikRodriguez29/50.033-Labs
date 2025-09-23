@@ -28,11 +28,12 @@ public class EnemyMovement : MonoBehaviour
     void Movegoomba()
     {
         enemyBody.MovePosition(enemyBody.position + velocity * Time.fixedDeltaTime);
+        // Debug.Log("Pos: ", (enemyBody.position + velocity * Time.fixedDeltaTime).x)
     }
 
       void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.name);
+        // Debug.Log(other.gameObject.name);
     }
 
     // note that this is Update(), which still works but not ideal. See below.
