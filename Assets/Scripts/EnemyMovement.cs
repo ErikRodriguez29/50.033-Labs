@@ -36,11 +36,20 @@ public class EnemyMovement : MonoBehaviour
         // Debug.Log(other.gameObject.name);
     }
 
+    public void GameRestart()
+    {
+        transform.localPosition = startPosition;
+        originalX = transform.position.x;
+        moveRight = -1;
+        ComputeVelocity();
+    }
+
     // note that this is Update(), which still works but not ideal. See below.
     void Update()
     {
         if (Mathf.Abs(enemyBody.position.x - originalX) < maxOffset)
-        {// move goomba
+        {
+            // move goomba
             Movegoomba();
         }
         else

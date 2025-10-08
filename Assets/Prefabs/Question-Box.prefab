@@ -151,8 +151,10 @@ MonoBehaviour:
   emptyBlockSprite: {fileID: 21300060, guid: 82bc45c4496284f4c823d1b837f65ec4, type: 3}
   coin: {fileID: 1118254727272036139, guid: 0f15b3c298deb4345884caeae2d569b6, type: 3}
   hasCoin: 1
+  coinSound: {fileID: 0}
   hitSound: {fileID: 8300000, guid: 6f487163c53194893952b1f457060b86, type: 3}
   audioSource: {fileID: 4115809974621113303}
+  gameManager: {fileID: 0}
 --- !u!82 &4115809974621113303
 AudioSource:
   m_ObjectHideFlags: 0
@@ -162,10 +164,10 @@ AudioSource:
   m_GameObject: {fileID: 5736251666763229468}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6886602350680137835, guid: ad0e5d766c38a9845a90743647f00f0b, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 6f487163c53194893952b1f457060b86, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
