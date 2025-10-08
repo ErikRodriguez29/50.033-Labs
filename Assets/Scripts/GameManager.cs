@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     private bool isGameOver = false;
 
+    public AudioSource gameOverAudioSource;
+    public AudioSource backgroundAudioSource;
+
     void Start()
     {
         gameStart.Invoke();
@@ -37,6 +40,8 @@ public class GameManager : MonoBehaviour
         gameRestart.Invoke();
         Time.timeScale = 1.0f;
         isGameOver = false;
+        backgroundAudioSource.Play();
+        gameOverAudioSource.Stop();
     }
 
     public void IncreaseScore(int increment)
@@ -56,13 +61,16 @@ public class GameManager : MonoBehaviour
     {
         if(isGameOver) return;
         isGameOver = true;
+    }
 
+    public void sendScore(int score)
+    {
         Time.timeScale = 0.0f;
-        // Debug.Log(score);
-
         if(gameOver != null)
         {
             gameOver.Invoke(score);
+            gameOverAudioSource.Play();
+            backgroundAudioSource.Stop();
         }
     }
 }

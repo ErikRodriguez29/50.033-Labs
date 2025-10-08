@@ -28,6 +28,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-6945179965703526598
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Game Over Music
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 48bb8bf1019ee2c439e5104268a368ec
+  m_Children: []
+  m_Volume: aeab901ef60c44245bcc5fb8247034e4
+  m_Pitch: ff92ee87b48535844ac6bbcaab763785
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -2837739339379047768}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-6886602350680137835
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -58,10 +77,25 @@ AudioMixerSnapshotController:
   m_SnapshotID: 7fd3827adcb44864b9472d2ec3970609
   m_FloatValues:
     7da339e0f9e90b44abb98967e5936a33: 5.8
-    46e44ca1eb0f87a48b669770af79dcf0: -9.66503
+    46e44ca1eb0f87a48b669770af79dcf0: -10
+    132291b9844b63d4881b37daefed209e: 0
     d79832ebf520f1e49bf000aeb91ce826: -80
     310f3bbfc4b2acd49aee63b4ea0bd8e5: 13.5
   m_TransitionOverrides: {}
+--- !u!244 &-2837739339379047768
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: de275837867c2b54ea305e4ae71000bb
+  m_EffectName: Attenuation
+  m_MixLevel: 05c5e3965037a254ab97d1b8d6bdd36e
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-2222305062623646145
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -140,15 +174,17 @@ AudioMixerController:
   - guids:
     - 2c27ce744e35bf84f84fbe472b3f1455
     - 9cac1a75e6934204ba16c39311491c13
+    - 0e4b5491fa779094192ac6f1e12d6250
     - 0e4d52b893f2f3d49baace6e8047f261
+    - 0743e2f45edd5984c9b91918f37a6bdf
     - e1381aeaf6efef04c8a606a4880d4779
     - 710f59bc815d15e48b04e5190f2bf2b3
-    - 9863a0ebdf5d7d447944b1724dee16b7
     - 0514916e4c1861c4898ebb60d5596959
-    - 0e4b5491fa779094192ac6f1e12d6250
+    - 9863a0ebdf5d7d447944b1724dee16b7
+    - 48bb8bf1019ee2c439e5104268a368ec
     name: All
   m_CurrentViewIndex: 1
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: -6858988699665842830}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -162,6 +198,7 @@ AudioMixerGroupController:
   - {fileID: -703736332944126076}
   - {fileID: 2525094400992212529}
   - {fileID: 6108327346899735153}
+  - {fileID: -6945179965703526598}
   m_Volume: dcb76afdacdf7084fadb1fbbf76e7f30
   m_Pitch: 5c7fe77252c055c45af666488d729fb4
   m_Send: 00000000000000000000000000000000
@@ -198,6 +235,7 @@ AudioMixerSnapshotController:
     7da339e0f9e90b44abb98967e5936a33: 5.8
     46e44ca1eb0f87a48b669770af79dcf0: -4.1973577
     d79832ebf520f1e49bf000aeb91ce826: -80
+    1749a94cd95abea4db0581851bbe77a9: 2.3330302
     310f3bbfc4b2acd49aee63b4ea0bd8e5: 13.5
   m_TransitionOverrides: {}
 --- !u!243 &283745565243303814

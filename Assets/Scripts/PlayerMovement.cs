@@ -133,6 +133,11 @@ public class PlayerMovement : MonoBehaviour
         gameManager.GameOver();
     }
 
+    public void deathScreen()
+    {
+        gameManager.sendScore(gameManager.score);
+    }
+
 
 
     // player actions
