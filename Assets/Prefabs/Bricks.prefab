@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7055689049723836806}
   - component: {fileID: 4354956537331287964}
   - component: {fileID: 2055437523039809718}
-  - component: {fileID: 4118575717505480469}
   - component: {fileID: 1248362943737237415}
+  - component: {fileID: 3053462639550469910}
   m_Layer: 7
   m_Name: Bricks
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 9071359258565370896}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.5, y: 2.1, z: 0.0717141}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -136,25 +136,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4118575717505480469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9071359258565370896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7785a878b94a51443a6c2b0458f4a3ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  emptyBlockSprite: {fileID: 21300026, guid: 82bc45c4496284f4c823d1b837f65ec4, type: 3}
-  coin: {fileID: 0}
-  hasCoin: 0
-  coinSound: {fileID: 0}
-  hitSound: {fileID: 8300000, guid: 6f487163c53194893952b1f457060b86, type: 3}
-  audioSource: {fileID: 1248362943737237415}
-  gameManager: {fileID: 0}
 --- !u!82 &1248362943737237415
 AudioSource:
   m_ObjectHideFlags: 0
@@ -252,3 +233,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3053462639550469910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9071359258565370896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7785a878b94a51443a6c2b0458f4a3ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptyBlockSprite: {fileID: 0}
+  coin: {fileID: 0}
+  hasPowerUp: 0
+  coinSound: {fileID: 0}
+  hitSound: {fileID: 0}
+  audioSource: {fileID: 0}

@@ -23,6 +23,16 @@ public class HUDManager : MonoBehaviour
 
     }
 
+    void Awake()
+    {
+        // other instructions
+        // subscribe to events
+        GameManager.instance.gameStart.AddListener(GameStart);
+        GameManager.instance.gameOver.AddListener(gameOverScene);
+        GameManager.instance.gameRestart.AddListener(GameStart);
+        GameManager.instance.scoreChange.AddListener(SetScore);
+    }
+
     public void GameStart()
     {
         // hide game over screen

@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
     // events
     public UnityEvent gameStart;
@@ -14,8 +15,8 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     private bool isGameOver = false;
 
-    public AudioSource gameOverAudioSource;
-    public AudioSource backgroundAudioSource;
+    private AudioSource gameOverAudioSource;
+    private AudioSource backgroundAudioSource;
 
     void Start()
     {
@@ -24,12 +25,27 @@ public class GameManager : MonoBehaviour
         
         // Set to be 30 FPS
         Application.targetFrameRate =  30;
+
+        gameOverAudioSource = GameObject.Find("GameOverMusic").GetComponent<AudioSource>();
+        backgroundAudioSource = GameObject.Find("Static Environment").GetComponent<AudioSource>();
+
+        // subscribe to scene manager scene change;
+        SceneManager.activeSceneChanged += SceneSetup;
+        Debug.Log("Game Manager invoke Start");
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public void SceneSetup(Scene current, Scene next)
+    {
+        gameStart.Invoke();
+        gameOverAudioSource = GameObject.Find("GameOverMusic").GetComponent<AudioSource>();
+        backgroundAudioSource = GameObject.Find("Static Environment").GetComponent<AudioSource>();
+        SetScore(score);
     }
 
     public void GameRestart()

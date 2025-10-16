@@ -6,8 +6,8 @@ public class EnemyMovement : MonoBehaviour
 {
 
     private float originalX;
-    private float maxOffset = 5.0f;
-    private float enemyPatroltime = 2.0f;
+    public float maxOffset = 5.0f;
+    private float enemyMoveSpeed = 2.5f;
     private int moveRight = -1;
     private Vector2 velocity;
     private Rigidbody2D enemyBody;
@@ -23,12 +23,11 @@ public class EnemyMovement : MonoBehaviour
     }
     void ComputeVelocity()
     {
-        velocity = new Vector2((moveRight) * maxOffset / enemyPatroltime, 0);
+        velocity = new Vector2((moveRight) * enemyMoveSpeed, 0);
     }
     void Movegoomba()
     {
         enemyBody.MovePosition(enemyBody.position + velocity * Time.fixedDeltaTime);
-        // Debug.Log("Pos: ", (enemyBody.position + velocity * Time.fixedDeltaTime).x)
     }
 
       void OnTriggerEnter2D(Collider2D other)

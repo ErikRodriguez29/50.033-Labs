@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     // Physics parameters
     public float speed = 10;
     public float maxSpeed = 20;
@@ -19,8 +21,6 @@ public class PlayerMovement : MonoBehaviour
 
     // other variables
     public GameObject enemies;
-
-    public GameManager gameManager;
 
     public float deathImpulse = 15;
 
@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     public MarioActions marioActions;
     public InputAction jumpHoldAction;
 
+    public Vector3 cameraStartPosition;
 
 
     // Main Methods
@@ -59,7 +60,25 @@ public class PlayerMovement : MonoBehaviour
 
         // update animator state
         marioAnimator.SetBool("onGround", onGroundState);
+        cameraStartPosition = new Vector3(0, 2, -10);
     }
+
+    public void SetStartingPosition(Scene current, Scene next)
+    {
+        if (next.name == "World-1-2")
+        {
+            // change the position accordingly in your World-1-2 case
+            this.transform.position = new Vector3(-3.73f, -2.5f, 0);
+            cameraStartPosition = new Vector3(0, 2, -10);
+        }
+        // camera = GameObject.Find("Main Camera");
+    }
+    
+    
+    void Awake(){
+        GameManager.instance.gameRestart.AddListener(GameRestart);
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -97,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
         marioAudio.Stop();
         marioAudio.Play();
         // reset camera position
-        gameCamera.position = new Vector3(0, 2, -10);
+        Camera.main.transform.position = cameraStartPosition;
         // reset velocity
         marioBody.linearVelocity = Vector2.zero;
     }
@@ -130,12 +149,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void die()
     {
-        gameManager.GameOver();
+        GameManager.instance.GameOver();
     }
 
     public void deathScreen()
     {
-        gameManager.sendScore(gameManager.score);
+        GameManager.instance.sendScore(GameManager.instance.score);
     }
 
 
