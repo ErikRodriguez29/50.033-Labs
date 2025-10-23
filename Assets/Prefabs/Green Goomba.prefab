@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 741979858736885414}
   - component: {fileID: 4111621001159221642}
   - component: {fileID: 4850856616733365814}
-  - component: {fileID: 1927496575202232512}
+  - component: {fileID: -3646583541803619211}
   m_Layer: 6
   m_Name: Green Goomba
   m_TagString: Enemy
@@ -163,7 +163,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1927496575202232512
+--- !u!114 &-3646583541803619211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6114137766259567707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b1d4e5594537a24f8e7b7be146c9094, type: 3}
+  m_Script: {fileID: 11500000, guid: 922b8678d53a59e4e99cfca3f45d10cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosition: {x: -4.81, y: 0.8, z: 0}
+  gameConstants: {fileID: 11400000, guid: 836bef33cb54ac041aa1d25d7dec40b1, type: 2}
